@@ -1,0 +1,52 @@
+1. Run cmd as administrator role.
+
+2. cd %java_home%/bin
+
+3. keytool -genkey -alias tomcat -keyalg RSA -keystore "C:\Temp\apache-tomcat-7.0.68\conf\tomcat.cert"
+
+4. set all password (default as "changeit")
+
+5. configure First and Last Name
+
+6. configure Organization Unit
+
+7. configure Organization
+
+8. configure City or Locality
+
+9. configure State or Province
+
+10. configure Country Code
+
+11. answer YES
+
+12. enter key password for tomcat twice (default as "changeit")
+
+13. edit file ""C:\Temp\apache-tomcat-7.0.68\conf\server.xml"
+
+    change code below:
+    
+    <!--
+    <Connector port="8443" protocol="org.apache.coyote.http11.Http11Protocol"
+               maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
+               clientAuth="false" sslProtocol="TLS" />
+    -->
+
+    to below:
+    
+    <Connector port="8443" protocol="org.apache.coyote.http11.Http11Protocol"
+               maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
+               keystoreFile="C:\Temp\apache-tomcat-7.0.68\conf\tomcat.cert" keystorePass="changeit"
+               clientAuth="false" sslProtocol="TLS" />
+
+14. save server.xml
+
+15. start tomcat
+
+16. enter "https://localhost:8443/" in the browser
+
+17. add exception for this ssl certificate.
+
+18. done!!!
+
+
