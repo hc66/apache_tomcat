@@ -2,7 +2,7 @@
 
 2. cd %java_home%/bin
 
-3. keytool -genkey -alias tomcat -keyalg RSA -keystore "C:\Temp\apache-tomcat-7.0.68\conf\tomcat.cert"
+3. keytool -genkey -alias tomcat -keyalg RSA -keystore "${CATALINA_HOME}\conf\tomcat.cert"
 
 4. set all password (default as "changeit")
 
@@ -36,7 +36,7 @@
     
     <Connector port="8443" protocol="org.apache.coyote.http11.Http11Protocol"
                maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
-               keystoreFile="C:\Temp\apache-tomcat-7.0.68\conf\tomcat.cert" keystorePass="changeit"
+               keystoreFile="${CATALINA_HOME}\conf\tomcat.cert" keystorePass="changeit"
                clientAuth="false" sslProtocol="TLS" />
 
 14. save server.xml
