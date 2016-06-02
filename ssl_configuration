@@ -22,7 +22,7 @@
 
 12. enter key password for tomcat twice (default as "changeit")
 
-13. edit file ""C:\Temp\apache-tomcat-7.0.68\conf\server.xml"
+13. edit file "${CATALINA_HOME}\conf\server.xml"
 
     change code below:
     
