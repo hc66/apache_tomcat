@@ -1,0 +1,5 @@
+Path webXMLLocation = Paths.get(context.getRealPath(File.separator) + File.separator + ".." +
+                                File.separator + "..."
+                      );
+                      
+Files.setLastModifiedTime(webXMLLocation, FileTime.fromMillis(System.currentTimeMillis()));
